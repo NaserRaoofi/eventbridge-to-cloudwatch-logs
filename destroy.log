@@ -1,0 +1,629 @@
+Destruction Log - Started at 2025-04-09 12:13:10
+[2025-04-09 12:13:10] Destroying Terraform-managed infrastructure...
+[0m[1mmodule.cloudwatch_logs.aws_cloudwatch_log_group.this: Refreshing state... [id=/aws/events/service-monitoring][0m
+[0m[1mmodule.alarms.aws_cloudwatch_metric_alarm.this["unauthorized_access"]: Refreshing state... [id=unauthorized_access][0m
+[0m[1mmodule.dashboard.aws_cloudwatch_dashboard.main: Refreshing state... [id=aws-service-monitoring][0m
+[0m[1mmodule.alarms.aws_cloudwatch_metric_alarm.this["high_severity"]: Refreshing state... [id=high_severity][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["iam"]: Refreshing state... [id=aws-service-monitoring-iam-events-production][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["guardduty"]: Refreshing state... [id=aws-service-monitoring-guardduty-events-production][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["security_hub"]: Refreshing state... [id=aws-service-monitoring-security-hub-events-production][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["rds"]: Refreshing state... [id=aws-service-monitoring-rds-events-production][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["s3"]: Refreshing state... [id=aws-service-monitoring-s3-events-production][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["ec2"]: Refreshing state... [id=aws-service-monitoring-ec2-events-production][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["cloudtrail"]: Refreshing state... [id=aws-service-monitoring-cloudtrail-events-production][0m
+[0m[1mmodule.metric_filters.aws_cloudwatch_log_metric_filter.filters["unauthorized_access"]: Refreshing state... [id=aws-service-monitoring-unauthorized_access][0m
+[0m[1mmodule.metric_filters.aws_cloudwatch_log_metric_filter.filters["high_severity"]: Refreshing state... [id=aws-service-monitoring-high_severity][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["s3"]: Refreshing state... [id=aws-service-monitoring-s3-events-production-s3-logs][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["guardduty"]: Refreshing state... [id=aws-service-monitoring-guardduty-events-production-guardduty-logs][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["rds"]: Refreshing state... [id=aws-service-monitoring-rds-events-production-rds-logs][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["security_hub"]: Refreshing state... [id=aws-service-monitoring-security-hub-events-production-security_hub-logs][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["cloudtrail"]: Refreshing state... [id=aws-service-monitoring-cloudtrail-events-production-cloudtrail-logs][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["iam"]: Refreshing state... [id=aws-service-monitoring-iam-events-production-iam-logs][0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["ec2"]: Refreshing state... [id=aws-service-monitoring-ec2-events-production-ec2-logs][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [31m-[0m destroy[0m
+
+Terraform will perform the following actions:
+
+[1m  # module.alarms.aws_cloudwatch_metric_alarm.this["high_severity"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_metric_alarm" "this" {
+      [31m-[0m[0m actions_enabled                       = true [90m-> null[0m[0m
+      [31m-[0m[0m alarm_actions                         = [] [90m-> null[0m[0m
+      [31m-[0m[0m alarm_name                            = "high_severity" [90m-> null[0m[0m
+      [31m-[0m[0m arn                                   = "arn:aws:cloudwatch:eu-west-2:235494806851:alarm:high_severity" [90m-> null[0m[0m
+      [31m-[0m[0m comparison_operator                   = "GreaterThanThreshold" [90m-> null[0m[0m
+      [31m-[0m[0m datapoints_to_alarm                   = 0 [90m-> null[0m[0m
+      [31m-[0m[0m dimensions                            = {} [90m-> null[0m[0m
+      [31m-[0m[0m evaluation_periods                    = 1 [90m-> null[0m[0m
+      [31m-[0m[0m id                                    = "high_severity" [90m-> null[0m[0m
+      [31m-[0m[0m insufficient_data_actions             = [] [90m-> null[0m[0m
+      [31m-[0m[0m metric_name                           = "HighSeverityFindings" [90m-> null[0m[0m
+      [31m-[0m[0m namespace                             = "Custom/ServiceMonitoring" [90m-> null[0m[0m
+      [31m-[0m[0m ok_actions                            = [] [90m-> null[0m[0m
+      [31m-[0m[0m period                                = 300 [90m-> null[0m[0m
+      [31m-[0m[0m statistic                             = "Sum" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                  = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                              = {} [90m-> null[0m[0m
+      [31m-[0m[0m threshold                             = 0 [90m-> null[0m[0m
+      [31m-[0m[0m treat_missing_data                    = "notBreaching" [90m-> null[0m[0m
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.alarms.aws_cloudwatch_metric_alarm.this["unauthorized_access"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_metric_alarm" "this" {
+      [31m-[0m[0m actions_enabled                       = true [90m-> null[0m[0m
+      [31m-[0m[0m alarm_actions                         = [] [90m-> null[0m[0m
+      [31m-[0m[0m alarm_name                            = "unauthorized_access" [90m-> null[0m[0m
+      [31m-[0m[0m arn                                   = "arn:aws:cloudwatch:eu-west-2:235494806851:alarm:unauthorized_access" [90m-> null[0m[0m
+      [31m-[0m[0m comparison_operator                   = "GreaterThanThreshold" [90m-> null[0m[0m
+      [31m-[0m[0m datapoints_to_alarm                   = 0 [90m-> null[0m[0m
+      [31m-[0m[0m dimensions                            = {} [90m-> null[0m[0m
+      [31m-[0m[0m evaluation_periods                    = 1 [90m-> null[0m[0m
+      [31m-[0m[0m id                                    = "unauthorized_access" [90m-> null[0m[0m
+      [31m-[0m[0m insufficient_data_actions             = [] [90m-> null[0m[0m
+      [31m-[0m[0m metric_name                           = "UnauthorizedAPICalls" [90m-> null[0m[0m
+      [31m-[0m[0m namespace                             = "Custom/ServiceMonitoring" [90m-> null[0m[0m
+      [31m-[0m[0m ok_actions                            = [] [90m-> null[0m[0m
+      [31m-[0m[0m period                                = 300 [90m-> null[0m[0m
+      [31m-[0m[0m statistic                             = "Sum" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                  = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                              = {} [90m-> null[0m[0m
+      [31m-[0m[0m threshold                             = 0 [90m-> null[0m[0m
+      [31m-[0m[0m treat_missing_data                    = "notBreaching" [90m-> null[0m[0m
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.cloudwatch_logs.aws_cloudwatch_log_group.this[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_log_group" "this" {
+      [31m-[0m[0m arn               = "arn:aws:logs:eu-west-2:235494806851:log-group:/aws/events/service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m id                = "/aws/events/service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m name              = "/aws/events/service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m retention_in_days = 30 [90m-> null[0m[0m
+      [31m-[0m[0m skip_destroy      = false [90m-> null[0m[0m
+      [31m-[0m[0m tags              = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all          = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+        [90m# (2 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.dashboard.aws_cloudwatch_dashboard.main[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_dashboard" "main" {
+      [31m-[0m[0m dashboard_arn  = "arn:aws:cloudwatch::235494806851:dashboard/aws-service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m dashboard_body = jsonencode(
+            {
+              [31m-[0m[0m widgets = [
+                  [31m-[0m[0m {
+                      [31m-[0m[0m height     = 6
+                      [31m-[0m[0m properties = {
+                          [31m-[0m[0m metrics = [
+                              [31m-[0m[0m [
+                                  [31m-[0m[0m "Custom/ServiceMonitoring",
+                                  [31m-[0m[0m "HighSeverityFindings",
+                                  [31m-[0m[0m "RuleName",
+                                  [31m-[0m[0m "aws-service-monitoring",
+                                ],
+                            ]
+                          [31m-[0m[0m period  = 300
+                          [31m-[0m[0m region  = "eu-west-2"
+                          [31m-[0m[0m stacked = false
+                          [31m-[0m[0m title   = "High Severity Security Findings"
+                          [31m-[0m[0m view    = "timeSeries"
+                        }
+                      [31m-[0m[0m type       = "metric"
+                      [31m-[0m[0m width      = 24
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m height     = 6
+                      [31m-[0m[0m properties = {
+                          [31m-[0m[0m metrics = [
+                              [31m-[0m[0m [
+                                  [31m-[0m[0m "Custom/ServiceMonitoring",
+                                  [31m-[0m[0m "UnauthorizedAPICalls",
+                                  [31m-[0m[0m "RuleName",
+                                  [31m-[0m[0m "aws-service-monitoring",
+                                ],
+                            ]
+                          [31m-[0m[0m period  = 300
+                          [31m-[0m[0m region  = "eu-west-2"
+                          [31m-[0m[0m stacked = false
+                          [31m-[0m[0m title   = "Unauthorized API Calls"
+                          [31m-[0m[0m view    = "timeSeries"
+                        }
+                      [31m-[0m[0m type       = "metric"
+                      [31m-[0m[0m width      = 24
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m height     = 6
+                      [31m-[0m[0m properties = {
+                          [31m-[0m[0m query  = "SOURCE '/aws/events/service-monitoring' | stats count(*) by eventSource"
+                          [31m-[0m[0m region = "eu-west-2"
+                          [31m-[0m[0m title  = "Event Distribution by Source"
+                          [31m-[0m[0m view   = "table"
+                        }
+                      [31m-[0m[0m type       = "log"
+                      [31m-[0m[0m width      = 24
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m height     = 6
+                      [31m-[0m[0m properties = {
+                          [31m-[0m[0m query  = "SOURCE '/aws/events/service-monitoring' | filter @message like /HIGH/ or @message like /CRITICAL/ | sort @timestamp desc | limit 20"
+                          [31m-[0m[0m region = "eu-west-2"
+                          [31m-[0m[0m title  = "Recent Security Events"
+                          [31m-[0m[0m view   = "table"
+                        }
+                      [31m-[0m[0m type       = "log"
+                      [31m-[0m[0m width      = 24
+                    },
+                  [31m-[0m[0m {
+                      [31m-[0m[0m height     = 6
+                      [31m-[0m[0m properties = {
+                          [31m-[0m[0m query  = "SOURCE '/aws/events/service-monitoring' | stats count(*) by eventName | sort count(*) desc | limit 10"
+                          [31m-[0m[0m region = "eu-west-2"
+                          [31m-[0m[0m title  = "Top API Calls"
+                          [31m-[0m[0m view   = "table"
+                        }
+                      [31m-[0m[0m type       = "log"
+                      [31m-[0m[0m width      = 24
+                    },
+                ]
+            }
+        ) [90m-> null[0m[0m
+      [31m-[0m[0m dashboard_name = "aws-service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m id             = "aws-service-monitoring" [90m-> null[0m[0m
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_rule.this["cloudtrail"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_rule" "this" {
+      [31m-[0m[0m arn                 = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-cloudtrail-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m description         = "Capture CloudTrail events" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name      = "default" [90m-> null[0m[0m
+      [31m-[0m[0m event_pattern       = jsonencode(
+            {
+              [31m-[0m[0m detail-type = [
+                  [31m-[0m[0m "AWS API Call via CloudTrail",
+                ]
+              [31m-[0m[0m source      = [
+                  [31m-[0m[0m "aws.cloudtrail",
+                ]
+            }
+        ) [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "aws-service-monitoring-cloudtrail-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m is_enabled          = true [90m-> null[0m[0m
+      [31m-[0m[0m name                = "aws-service-monitoring-cloudtrail-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m tags                = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all            = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_rule.this["ec2"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_rule" "this" {
+      [31m-[0m[0m arn                 = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-ec2-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m description         = "Capture EC2 instance state changes" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name      = "default" [90m-> null[0m[0m
+      [31m-[0m[0m event_pattern       = jsonencode(
+            {
+              [31m-[0m[0m detail      = {
+                  [31m-[0m[0m eventName   = [
+                      [31m-[0m[0m "RunInstances",
+                      [31m-[0m[0m "StopInstances",
+                      [31m-[0m[0m "TerminateInstances",
+                    ]
+                  [31m-[0m[0m eventSource = [
+                      [31m-[0m[0m "ec2.amazonaws.com",
+                    ]
+                }
+              [31m-[0m[0m detail-type = [
+                  [31m-[0m[0m "AWS API Call via CloudTrail",
+                ]
+              [31m-[0m[0m source      = [
+                  [31m-[0m[0m "aws.ec2",
+                ]
+            }
+        ) [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "aws-service-monitoring-ec2-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m is_enabled          = true [90m-> null[0m[0m
+      [31m-[0m[0m name                = "aws-service-monitoring-ec2-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m tags                = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all            = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_rule.this["guardduty"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_rule" "this" {
+      [31m-[0m[0m arn                 = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-guardduty-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m description         = "Capture GuardDuty findings" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name      = "default" [90m-> null[0m[0m
+      [31m-[0m[0m event_pattern       = jsonencode(
+            {
+              [31m-[0m[0m detail-type = [
+                  [31m-[0m[0m "GuardDuty Finding",
+                ]
+              [31m-[0m[0m source      = [
+                  [31m-[0m[0m "aws.guardduty",
+                ]
+            }
+        ) [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "aws-service-monitoring-guardduty-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m is_enabled          = true [90m-> null[0m[0m
+      [31m-[0m[0m name                = "aws-service-monitoring-guardduty-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m tags                = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all            = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_rule.this["iam"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_rule" "this" {
+      [31m-[0m[0m arn                 = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-iam-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m description         = "Capture IAM changes" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name      = "default" [90m-> null[0m[0m
+      [31m-[0m[0m event_pattern       = jsonencode(
+            {
+              [31m-[0m[0m detail      = {
+                  [31m-[0m[0m eventName   = [
+                      [31m-[0m[0m "CreateUser",
+                      [31m-[0m[0m "DeleteUser",
+                      [31m-[0m[0m "CreatePolicy",
+                      [31m-[0m[0m "DeletePolicy",
+                    ]
+                  [31m-[0m[0m eventSource = [
+                      [31m-[0m[0m "iam.amazonaws.com",
+                    ]
+                }
+              [31m-[0m[0m detail-type = [
+                  [31m-[0m[0m "AWS API Call via CloudTrail",
+                ]
+              [31m-[0m[0m source      = [
+                  [31m-[0m[0m "aws.iam",
+                ]
+            }
+        ) [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "aws-service-monitoring-iam-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m is_enabled          = true [90m-> null[0m[0m
+      [31m-[0m[0m name                = "aws-service-monitoring-iam-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m tags                = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all            = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_rule.this["rds"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_rule" "this" {
+      [31m-[0m[0m arn                 = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-rds-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m description         = "Capture RDS instance changes" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name      = "default" [90m-> null[0m[0m
+      [31m-[0m[0m event_pattern       = jsonencode(
+            {
+              [31m-[0m[0m detail      = {
+                  [31m-[0m[0m eventName   = [
+                      [31m-[0m[0m "CreateDBInstance",
+                      [31m-[0m[0m "DeleteDBInstance",
+                      [31m-[0m[0m "ModifyDBInstance",
+                    ]
+                  [31m-[0m[0m eventSource = [
+                      [31m-[0m[0m "rds.amazonaws.com",
+                    ]
+                }
+              [31m-[0m[0m detail-type = [
+                  [31m-[0m[0m "AWS API Call via CloudTrail",
+                ]
+              [31m-[0m[0m source      = [
+                  [31m-[0m[0m "aws.rds",
+                ]
+            }
+        ) [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "aws-service-monitoring-rds-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m is_enabled          = true [90m-> null[0m[0m
+      [31m-[0m[0m name                = "aws-service-monitoring-rds-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m tags                = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all            = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_rule.this["s3"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_rule" "this" {
+      [31m-[0m[0m arn                 = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-s3-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m description         = "Capture S3 bucket changes" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name      = "default" [90m-> null[0m[0m
+      [31m-[0m[0m event_pattern       = jsonencode(
+            {
+              [31m-[0m[0m detail      = {
+                  [31m-[0m[0m eventName   = [
+                      [31m-[0m[0m "CreateBucket",
+                      [31m-[0m[0m "DeleteBucket",
+                      [31m-[0m[0m "PutBucketPolicy",
+                    ]
+                  [31m-[0m[0m eventSource = [
+                      [31m-[0m[0m "s3.amazonaws.com",
+                    ]
+                }
+              [31m-[0m[0m detail-type = [
+                  [31m-[0m[0m "AWS API Call via CloudTrail",
+                ]
+              [31m-[0m[0m source      = [
+                  [31m-[0m[0m "aws.s3",
+                ]
+            }
+        ) [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "aws-service-monitoring-s3-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m is_enabled          = true [90m-> null[0m[0m
+      [31m-[0m[0m name                = "aws-service-monitoring-s3-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m tags                = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all            = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_rule.this["security_hub"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_rule" "this" {
+      [31m-[0m[0m arn                 = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-security-hub-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m description         = "Capture Security Hub findings" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name      = "default" [90m-> null[0m[0m
+      [31m-[0m[0m event_pattern       = jsonencode(
+            {
+              [31m-[0m[0m detail-type = [
+                  [31m-[0m[0m "Security Hub Findings - Imported",
+                ]
+              [31m-[0m[0m source      = [
+                  [31m-[0m[0m "aws.securityhub",
+                ]
+            }
+        ) [90m-> null[0m[0m
+      [31m-[0m[0m id                  = "aws-service-monitoring-security-hub-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m is_enabled          = true [90m-> null[0m[0m
+      [31m-[0m[0m name                = "aws-service-monitoring-security-hub-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m tags                = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all            = {
+          [31m-[0m[0m "Environment" = "production"
+          [31m-[0m[0m "Project"     = "aws-service-monitoring"
+        } [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_target.this["cloudtrail"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_target" "this" {
+      [31m-[0m[0m arn            = "arn:aws:logs:eu-west-2:235494806851:log-group:/aws/events/service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name = "default" [90m-> null[0m[0m
+      [31m-[0m[0m id             = "aws-service-monitoring-cloudtrail-events-production-cloudtrail-logs" [90m-> null[0m[0m
+      [31m-[0m[0m rule           = "aws-service-monitoring-cloudtrail-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m target_id      = "cloudtrail-logs" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m retry_policy {
+          [31m-[0m[0m maximum_event_age_in_seconds = 86400 [90m-> null[0m[0m
+          [31m-[0m[0m maximum_retry_attempts       = 3 [90m-> null[0m[0m
+        }
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_target.this["ec2"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_target" "this" {
+      [31m-[0m[0m arn            = "arn:aws:logs:eu-west-2:235494806851:log-group:/aws/events/service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name = "default" [90m-> null[0m[0m
+      [31m-[0m[0m id             = "aws-service-monitoring-ec2-events-production-ec2-logs" [90m-> null[0m[0m
+      [31m-[0m[0m rule           = "aws-service-monitoring-ec2-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m target_id      = "ec2-logs" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m retry_policy {
+          [31m-[0m[0m maximum_event_age_in_seconds = 86400 [90m-> null[0m[0m
+          [31m-[0m[0m maximum_retry_attempts       = 3 [90m-> null[0m[0m
+        }
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_target.this["guardduty"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_target" "this" {
+      [31m-[0m[0m arn            = "arn:aws:logs:eu-west-2:235494806851:log-group:/aws/events/service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name = "default" [90m-> null[0m[0m
+      [31m-[0m[0m id             = "aws-service-monitoring-guardduty-events-production-guardduty-logs" [90m-> null[0m[0m
+      [31m-[0m[0m rule           = "aws-service-monitoring-guardduty-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m target_id      = "guardduty-logs" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m retry_policy {
+          [31m-[0m[0m maximum_event_age_in_seconds = 86400 [90m-> null[0m[0m
+          [31m-[0m[0m maximum_retry_attempts       = 3 [90m-> null[0m[0m
+        }
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_target.this["iam"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_target" "this" {
+      [31m-[0m[0m arn            = "arn:aws:logs:eu-west-2:235494806851:log-group:/aws/events/service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name = "default" [90m-> null[0m[0m
+      [31m-[0m[0m id             = "aws-service-monitoring-iam-events-production-iam-logs" [90m-> null[0m[0m
+      [31m-[0m[0m rule           = "aws-service-monitoring-iam-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m target_id      = "iam-logs" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m retry_policy {
+          [31m-[0m[0m maximum_event_age_in_seconds = 86400 [90m-> null[0m[0m
+          [31m-[0m[0m maximum_retry_attempts       = 3 [90m-> null[0m[0m
+        }
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_target.this["rds"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_target" "this" {
+      [31m-[0m[0m arn            = "arn:aws:logs:eu-west-2:235494806851:log-group:/aws/events/service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name = "default" [90m-> null[0m[0m
+      [31m-[0m[0m id             = "aws-service-monitoring-rds-events-production-rds-logs" [90m-> null[0m[0m
+      [31m-[0m[0m rule           = "aws-service-monitoring-rds-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m target_id      = "rds-logs" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m retry_policy {
+          [31m-[0m[0m maximum_event_age_in_seconds = 86400 [90m-> null[0m[0m
+          [31m-[0m[0m maximum_retry_attempts       = 3 [90m-> null[0m[0m
+        }
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_target.this["s3"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_target" "this" {
+      [31m-[0m[0m arn            = "arn:aws:logs:eu-west-2:235494806851:log-group:/aws/events/service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name = "default" [90m-> null[0m[0m
+      [31m-[0m[0m id             = "aws-service-monitoring-s3-events-production-s3-logs" [90m-> null[0m[0m
+      [31m-[0m[0m rule           = "aws-service-monitoring-s3-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m target_id      = "s3-logs" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m retry_policy {
+          [31m-[0m[0m maximum_event_age_in_seconds = 86400 [90m-> null[0m[0m
+          [31m-[0m[0m maximum_retry_attempts       = 3 [90m-> null[0m[0m
+        }
+    }
+
+[1m  # module.eventbridge_rules.aws_cloudwatch_event_target.this["security_hub"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_event_target" "this" {
+      [31m-[0m[0m arn            = "arn:aws:logs:eu-west-2:235494806851:log-group:/aws/events/service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m event_bus_name = "default" [90m-> null[0m[0m
+      [31m-[0m[0m id             = "aws-service-monitoring-security-hub-events-production-security_hub-logs" [90m-> null[0m[0m
+      [31m-[0m[0m rule           = "aws-service-monitoring-security-hub-events-production" [90m-> null[0m[0m
+      [31m-[0m[0m target_id      = "security_hub-logs" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m retry_policy {
+          [31m-[0m[0m maximum_event_age_in_seconds = 86400 [90m-> null[0m[0m
+          [31m-[0m[0m maximum_retry_attempts       = 3 [90m-> null[0m[0m
+        }
+    }
+
+[1m  # module.metric_filters.aws_cloudwatch_log_metric_filter.filters["high_severity"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_log_metric_filter" "filters" {
+      [31m-[0m[0m id             = "aws-service-monitoring-high_severity" [90m-> null[0m[0m
+      [31m-[0m[0m log_group_name = "/aws/events/service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m name           = "aws-service-monitoring-high_severity" [90m-> null[0m[0m
+      [31m-[0m[0m pattern        = "{ ($.detail.findings.Severity.Label = \"HIGH\") || ($.detail.findings.Severity.Label = \"CRITICAL\") }" [90m-> null[0m[0m
+
+      [31m-[0m[0m metric_transformation {
+          [31m-[0m[0m default_value = "0" [90m-> null[0m[0m
+          [31m-[0m[0m dimensions    = {} [90m-> null[0m[0m
+          [31m-[0m[0m name          = "HighSeverityFindings" [90m-> null[0m[0m
+          [31m-[0m[0m namespace     = "Custom/ServiceMonitoring" [90m-> null[0m[0m
+          [31m-[0m[0m unit          = "None" [90m-> null[0m[0m
+          [31m-[0m[0m value         = "1" [90m-> null[0m[0m
+        }
+    }
+
+[1m  # module.metric_filters.aws_cloudwatch_log_metric_filter.filters["unauthorized_access"][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_log_metric_filter" "filters" {
+      [31m-[0m[0m id             = "aws-service-monitoring-unauthorized_access" [90m-> null[0m[0m
+      [31m-[0m[0m log_group_name = "/aws/events/service-monitoring" [90m-> null[0m[0m
+      [31m-[0m[0m name           = "aws-service-monitoring-unauthorized_access" [90m-> null[0m[0m
+      [31m-[0m[0m pattern        = "{ $.detail.errorCode = \"AccessDenied\" }" [90m-> null[0m[0m
+
+      [31m-[0m[0m metric_transformation {
+          [31m-[0m[0m default_value = "0" [90m-> null[0m[0m
+          [31m-[0m[0m dimensions    = {} [90m-> null[0m[0m
+          [31m-[0m[0m name          = "UnauthorizedAPICalls" [90m-> null[0m[0m
+          [31m-[0m[0m namespace     = "Custom/ServiceMonitoring" [90m-> null[0m[0m
+          [31m-[0m[0m unit          = "None" [90m-> null[0m[0m
+          [31m-[0m[0m value         = "1" [90m-> null[0m[0m
+        }
+    }
+
+[1mPlan:[0m 0 to add, 0 to change, 20 to destroy.
+[0m
+Changes to Outputs:
+  [31m-[0m[0m alarms               = {
+      [31m-[0m[0m high_severity       = "arn:aws:cloudwatch:eu-west-2:235494806851:alarm:high_severity"
+      [31m-[0m[0m unauthorized_access = "arn:aws:cloudwatch:eu-west-2:235494806851:alarm:unauthorized_access"
+    } [90m-> null[0m[0m
+  [31m-[0m[0m cloudwatch_log_group = "arn:aws:logs:eu-west-2:235494806851:log-group:/aws/events/service-monitoring" [90m-> null[0m[0m
+  [31m-[0m[0m dashboard_url        = "https://console.aws.amazon.com/cloudwatch/home?region=eu-west-2#dashboards:name=default-resource-name" [90m-> null[0m[0m
+  [31m-[0m[0m eventbridge_rules    = {
+      [31m-[0m[0m cloudtrail   = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-cloudtrail-events-production"
+      [31m-[0m[0m ec2          = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-ec2-events-production"
+      [31m-[0m[0m guardduty    = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-guardduty-events-production"
+      [31m-[0m[0m iam          = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-iam-events-production"
+      [31m-[0m[0m rds          = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-rds-events-production"
+      [31m-[0m[0m s3           = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-s3-events-production"
+      [31m-[0m[0m security_hub = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-security-hub-events-production"
+    } [90m-> null[0m[0m
+  [31m-[0m[0m metric_filters       = {
+      [31m-[0m[0m high_severity       = "default-resource-name-high_severity"
+      [31m-[0m[0m unauthorized_access = "default-resource-name-unauthorized_access"
+    } [90m-> null[0m[0m
+[0m[1mmodule.metric_filters.aws_cloudwatch_log_metric_filter.filters["high_severity"]: Destroying... [id=aws-service-monitoring-high_severity][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["iam"]: Destroying... [id=aws-service-monitoring-iam-events-production-iam-logs][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["cloudtrail"]: Destroying... [id=aws-service-monitoring-cloudtrail-events-production-cloudtrail-logs][0m[0m
+[0m[1mmodule.alarms.aws_cloudwatch_metric_alarm.this["high_severity"]: Destroying... [id=high_severity][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["guardduty"]: Destroying... [id=aws-service-monitoring-guardduty-events-production-guardduty-logs][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["s3"]: Destroying... [id=aws-service-monitoring-s3-events-production-s3-logs][0m[0m
+[0m[1mmodule.alarms.aws_cloudwatch_metric_alarm.this["unauthorized_access"]: Destroying... [id=unauthorized_access][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["security_hub"]: Destroying... [id=aws-service-monitoring-security-hub-events-production-security_hub-logs][0m[0m
+[0m[1mmodule.dashboard.aws_cloudwatch_dashboard.main: Destroying... [id=aws-service-monitoring][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["ec2"]: Destroying... [id=aws-service-monitoring-ec2-events-production-ec2-logs][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["guardduty"]: Destruction complete after 0s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["iam"]: Destruction complete after 0s[0m
+[0m[1mmodule.metric_filters.aws_cloudwatch_log_metric_filter.filters["high_severity"]: Destruction complete after 0s[0m
+[0m[1mmodule.metric_filters.aws_cloudwatch_log_metric_filter.filters["unauthorized_access"]: Destroying... [id=aws-service-monitoring-unauthorized_access][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["s3"]: Destruction complete after 0s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["security_hub"]: Destruction complete after 0s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["ec2"]: Destruction complete after 0s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["cloudtrail"]: Destruction complete after 0s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["rds"]: Destroying... [id=aws-service-monitoring-rds-events-production-rds-logs][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_target.this["rds"]: Destruction complete after 0s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["iam"]: Destroying... [id=aws-service-monitoring-iam-events-production][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["ec2"]: Destroying... [id=aws-service-monitoring-ec2-events-production][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["cloudtrail"]: Destroying... [id=aws-service-monitoring-cloudtrail-events-production][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["guardduty"]: Destroying... [id=aws-service-monitoring-guardduty-events-production][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["rds"]: Destroying... [id=aws-service-monitoring-rds-events-production][0m[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["security_hub"]: Destroying... [id=aws-service-monitoring-security-hub-events-production][0m[0m
+[0m[1mmodule.metric_filters.aws_cloudwatch_log_metric_filter.filters["unauthorized_access"]: Destruction complete after 0s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["s3"]: Destroying... [id=aws-service-monitoring-s3-events-production][0m[0m
+[0m[1mmodule.alarms.aws_cloudwatch_metric_alarm.this["unauthorized_access"]: Destruction complete after 0s[0m
+[0m[1mmodule.cloudwatch_logs.aws_cloudwatch_log_group.this: Destroying... [id=/aws/events/service-monitoring][0m[0m
+[0m[1mmodule.alarms.aws_cloudwatch_metric_alarm.this["high_severity"]: Destruction complete after 1s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["cloudtrail"]: Destruction complete after 1s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["ec2"]: Destruction complete after 1s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["iam"]: Destruction complete after 1s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["rds"]: Destruction complete after 1s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["guardduty"]: Destruction complete after 1s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["security_hub"]: Destruction complete after 1s[0m
+[0m[1mmodule.eventbridge_rules.aws_cloudwatch_event_rule.this["s3"]: Destruction complete after 1s[0m
+[0m[1mmodule.cloudwatch_logs.aws_cloudwatch_log_group.this: Destruction complete after 0s[0m
+[0m[1mmodule.dashboard.aws_cloudwatch_dashboard.main: Destruction complete after 1s[0m
+[0m[1m[32m
+Destroy complete! Resources: 20 destroyed.
+[0m[2025-04-09 12:13:10] Infrastructure destroyed successfully.
