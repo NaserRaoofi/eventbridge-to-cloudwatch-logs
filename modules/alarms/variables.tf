@@ -1,17 +1,18 @@
 variable "metric_namespace" {
-  description = "Namespace for the CloudWatch metrics"
+  description = "Namespace for the metrics"
   type        = string
 }
 
 variable "alarms" {
-  description = "Map of CloudWatch alarms to create"
+  description = "Map of alarms to create"
   type = map(object({
     metric_name         = string
-    threshold           = number
-    evaluation_periods  = number
-    period             = number
     comparison_operator = string
-    alarm_description   = string
+    evaluation_periods  = string
+    metric_period       = string
+    threshold           = string
+    statistic           = string
+    treat_missing_data  = string
   }))
 }
 

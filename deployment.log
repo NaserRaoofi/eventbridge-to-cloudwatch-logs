@@ -1,0 +1,44 @@
+Deployment Log - Started at 2025-04-09 11:42:23
+[2025-04-09 11:42:23] Checking prerequisites...
+[2025-04-09 11:42:23] Region eu-west-2 is accessible.
+[2025-04-09 11:42:23] All prerequisites met.
+[2025-04-09 11:42:23] Initializing Terraform...
+[2025-04-09 11:42:23] Terraform initialized successfully.
+[2025-04-09 11:42:23] Validating Terraform configuration...
+[2025-04-09 11:42:23] Terraform configuration is valid.
+[2025-04-09 11:42:23] Creating execution plan...
+[2025-04-09 11:42:23] Changes detected. Proceeding with deployment...
+[2025-04-09 11:42:23] Applying changes...
+[0m[1mmodule.metric_filters.aws_cloudwatch_log_metric_filter.filters["high_severity"]: Creating...[0m[0m
+[0m[1mmodule.metric_filters.aws_cloudwatch_log_metric_filter.filters["unauthorized_access"]: Creating...[0m[0m
+[0m[1mmodule.metric_filters.aws_cloudwatch_log_metric_filter.filters["unauthorized_access"]: Creation complete after 1s [id=aws-service-monitoring-unauthorized_access][0m
+[0m[1mmodule.metric_filters.aws_cloudwatch_log_metric_filter.filters["high_severity"]: Creation complete after 1s [id=aws-service-monitoring-high_severity][0m
+[0m[1m[32m
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0malarms = {
+  "high_severity" = "arn:aws:cloudwatch:eu-west-2:235494806851:alarm:high_severity"
+  "unauthorized_access" = "arn:aws:cloudwatch:eu-west-2:235494806851:alarm:unauthorized_access"
+}
+cloudwatch_log_group = "arn:aws:logs:eu-west-2:235494806851:log-group:/aws/events/service-monitoring"
+dashboard_url = "https://console.aws.amazon.com/cloudwatch/home?region=eu-west-2#dashboards:name=aws-service-monitoring"
+eventbridge_rules = {
+  "cloudtrail" = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-cloudtrail-events-production"
+  "ec2" = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-ec2-events-production"
+  "guardduty" = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-guardduty-events-production"
+  "iam" = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-iam-events-production"
+  "rds" = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-rds-events-production"
+  "s3" = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-s3-events-production"
+  "security_hub" = "arn:aws:events:eu-west-2:235494806851:rule/aws-service-monitoring-security-hub-events-production"
+}
+metric_filters = {
+  "high_severity" = "aws-service-monitoring-high_severity"
+  "unauthorized_access" = "aws-service-monitoring-unauthorized_access"
+}
+[2025-04-09 11:42:23] Changes applied successfully.
+[2025-04-09 11:42:23] Retrieving deployment outputs...
+[2025-04-09 11:42:23] CloudWatch Dashboard URL: https://console.aws.amazon.com/cloudwatch/home?region=eu-west-2#dashboards:name=aws-service-monitoring
+[2025-04-09 11:42:23] Deployment completed successfully!
+[2025-04-09 11:42:23] Check deployment.log for detailed logs.

@@ -1,23 +1,40 @@
-variable "aws_region" {
-  description = "AWS region to deploy resources"
+variable "region" {
+  description = "AWS region"
   type        = string
-  default     = "us-east-1"
+  default     = "eu-west-2"
+}
+
+variable "name" {
+  description = "Name prefix for all resources"
+  type        = string
+}
+
+variable "log_retention_days" {
+  description = "Number of days to retain CloudWatch logs"
+  type        = number
+  default     = 30
+}
+
+variable "kms_key_id" {
+  description = "KMS key ID for CloudWatch log encryption"
+  type        = string
+  default     = null
+}
+
+variable "tags" {
+  description = "Tags to apply to all resources"
+  type        = map(string)
+  default     = {}
 }
 
 variable "environment" {
-  description = "Environment name (e.g., dev, prod)"
+  description = "Environment name"
   type        = string
-  default     = "dev"
+  default     = "production"
 }
 
 variable "project_name" {
   description = "Name of the project"
   type        = string
   default     = "aws-service-monitoring"
-}
-
-variable "kms_key_arn" {
-  description = "ARN of the KMS key for CloudWatch log encryption"
-  type        = string
-  default     = null
 } 
